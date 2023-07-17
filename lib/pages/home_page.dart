@@ -30,16 +30,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.grey[400],
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // app bar
             Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 40, 
-                vertical: 25
+              padding: const EdgeInsets.only(
+                left: 40,
+                right: 40, 
+                top: 25,
+                bottom: 10,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,15 +49,18 @@ class _HomePageState extends State<HomePage> {
                   // menu icon
                   Image.asset(
                     'assets/icons/menu.png',
-                    height: 45,
+                    height: 32,
                     color: Colors.grey[800],
                   ),
                   // profile icon
-                  Icon(
-                    Icons.person,
-                    size: 45,
-                    color: Colors.grey[800],
-                  )
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Colors.white,
+                    child: CircleAvatar(
+                      radius: 26,
+                      backgroundImage: AssetImage('assets/icons/ajsamit.jpg'),
+                    )
+                  ),
                 ]
               ),
             ),
